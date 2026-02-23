@@ -157,13 +157,13 @@ def download_from_kaggle(dataset_name: str, filename: str, dest_path: Path) -> b
 
     try:
         print(f"  Downloading {filename} from Kaggle...")
-kaggle.api.dataset_download_file(
-                    'ravithejathaduri/nse-fno-database',
-                    current_year_file,
-                    path=str(PARQUET_DIR),
-                    quiet=False
-                )
-        return True
+        kaggle.api.dataset_download_file(
+                            'ravithejathaduri/nse-fno-database',
+                            current_year_file,
+                            path=str(PARQUET_DIR),
+                            quiet=False
+                        )
+                return True
     except Exception as e:
         print(f"  Error downloading {filename}: {e}")
         return False
